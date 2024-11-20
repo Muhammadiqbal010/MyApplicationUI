@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "33.0.0"
+
+    defaultConfig {
+        applicationId "com.example.myapplicationuiux"
+        minSdkVersion 16
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    
+    namespace 'com.example.myapplication'
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Perbarui ke versi yang lebih baru untuk kompatibilitas
+    implementation 'androidx.appcompat:appcompat:1.6.1'  // Versi terbaru
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'  // Versi terbaru
+    testImplementation 'junit:junit:4.13.2'  // Versi terbaru
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'  // Versi terbaru
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'  // Versi terbaru
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'  // Versi terbaru
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.7.0'  // Versi terbaru
+}
